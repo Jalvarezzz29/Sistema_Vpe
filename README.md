@@ -13,18 +13,24 @@ Historial Persistente: Al reiniciar la votación, los resultados consolidados (i
 Interfaz de Menú Interactivo: Navegación sencilla en consola a través de opciones numéricas con validaciones de entradas vacías y errores.
 
 📋 Funciones del Código
+
+Juan Jose Piedrahita Realizo: 
 registrar_voto(id_votante, opcion)
 
 Verifica si el ID del votante ya existe en el diccionario votos. Si ya votó, rechaza la operación; de lo contrario, almacena su voto.
 
+
+Juan Jose Piedrahita Realizo: 
 ver_resultados()
 
 Calcula el total de votos, agrupa el conteo por cada opción, calcula el porcentaje correspondiente, imprime los resultados formateados y evalúa quién es el ganador o si hubo empate.
 
+Estiven Garces Realizo: 
 reiniciar_votacion()
 
 Guarda un resumen completo de la votación actual en el archivo historial_votaciones.txt con codificación UTF-8 y limpia el diccionario para iniciar un nuevo proceso.
 
+Estiven Garces Realizo: 
 mostrar_menu() / main()
 
 Controla el flujo principal del programa mediante un bucle while y maneja las entradas del usuario con validaciones básicas de errores.
