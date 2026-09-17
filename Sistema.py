@@ -33,6 +33,17 @@ def ver_resultados():
 
     print(f"Total de votos: {total_votos}")
 
+    # MEJORA: Calcular y mostrar el ganador o un empate
+    max_votos = max(conteo.values())
+    ganadores = [opc for opc, cant in conteo.items() if cant == max_votos]
+
+    if len(ganadores) == 1:
+        print(f"🏆 ¡Opción ganadora: {ganadores[0]} con {max_votos} votos!")
+    else:
+        print(
+            f"🤝 ¡Empate entre las opciones: {', '.join(ganadores)} con {max_votos} votos cada una!"
+        )
+
 
 def reiniciar_votacion():
     if not votos:
@@ -56,6 +67,17 @@ def reiniciar_votacion():
             )
 
         archivo.write(f"Total de votos: {total_votos}\n")
+
+        # MEJORA: Registrar también el ganador/empate en el historial guardado
+        max_votos = max(conteo.values())
+        ganadores = [opc for opc, cant in conteo.items() if cant == max_votos]
+        if len(ganadores) == 1:
+            archivo.write(f"Ganador: {ganadores[0]} ({max_votos} votos)\n")
+        else:
+            archivo.write(
+                f"Empate entre: {', '.join(ganadores)} ({max_votos} votos)\n"
+            )
+
         archivo.write("\n")
 
     votos.clear()
